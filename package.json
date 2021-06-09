@@ -1,0 +1,22 @@
+{
+  "name": "cordova-dfn-apple-wallet",
+  "version": "0.0.1",
+  "description": "This plugin provides support for adding your Account Details to Apple Wallet",
+  "cordova": {
+    "id": "cordova-dfn-apple-wallet",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anushkaisuru/applewallet.git"
+  },
+  "keywords": [
+    "cordova-ios",
+    "apple-wallet",
+    "dfn"
+  ],
+  "author": "Hirantha Jayawardena",
+  "license": "Apache 2.0"
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-dfn-apple-wallet" version="0.0.1">
+    <name>DFNAppleWallet</name>
+    <description>This plugin provides support for adding your Account Details to Apple Wallet</description>
+    <author>Hirantha Jayawardena</author>
+    <keywords>Apple,Wallet,iOS,DFN</keywords>
+    <license>Apache 2.0</license>
+    <js-module src="www/dfnAppleWallet.js" name="DFNAppleWallet">
+        <clobbers target="window.plugins.DFNAppleWallet" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DFNAppleWallet">
+                <param name="ios-package" value="DFNAppleWallet"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/dfnAppleWallet.swift" />
+        <framework src="PassKit.framework" />
+        <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+    </platform>
+</plugin>
+
+
+
+
+
