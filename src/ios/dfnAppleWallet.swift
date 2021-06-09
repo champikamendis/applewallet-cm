@@ -5,7 +5,7 @@ import PassKit
       @objc(addPass:)
       func addPass(command: CDVInvokedUrlCommand) {
 
-            let url = command.argument(at: 0) as! String?
+            let url = URL(string: command.argument(at: 0) as! String)!
             let reference = command.argument(at: 1) as! String?
             let iban = command.argument(at: 2) as! String?
             let account = command.argument(at: 3) as! String?
