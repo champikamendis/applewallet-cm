@@ -8,7 +8,7 @@ var executeCallback = function(callback, message) {
 };
 
 var DFNAppleWallet = {
-    addPass: function(reference, iban, account, successCallback, errorCallback) {
+    addPass: function(passEndpoint, reference, iban, account, successCallback, errorCallback) {
         return new Promise(function(resolve, reject) {
             exec(function(message) {
                 executeCallback(successCallback, message);
@@ -16,7 +16,7 @@ var DFNAppleWallet = {
             }, function(message) {
                 executeCallback(errorCallback, message);
                 reject(message);
-            }, PLUGIN_NAME, 'addPass', [reference, iban, account]);
+            }, PLUGIN_NAME, 'addPass', [passEndpoint, reference, iban, account]);
         });
     }
 };

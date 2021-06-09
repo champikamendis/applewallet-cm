@@ -27,8 +27,8 @@ import PassKit
                     print("Some error occurred!")
                     print(error!)
                 } else {
-                    let pass = try? PKPass(data: data!, error: nil)
-                    let pkvc: PKAddPassesViewController! = PKAddPassesViewController(pass: pass!)
+                    let pass = PKPass(data: data!, error: nil)
+                    let pkvc: PKAddPassesViewController! = PKAddPassesViewController(pass: pass)
                     pkvc.delegate = self
                     self.viewController.present(pkvc, animated: true, completion: nil)
                 }
