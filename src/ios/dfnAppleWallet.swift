@@ -6,7 +6,7 @@ import PassKit
       func addPass(command: CDVInvokedUrlCommand) {
 
             let url = URL(string: command.argument(at: 0) as! String)!
-            let jsonData = command.argument(at: 1) as! String?
+            let json1 = command.argument(at: 1) as! String?
             //let dat = command.argument(at: 2) as! String?
            // let account = command.argument(at: 3) as! String?
 
@@ -15,11 +15,10 @@ import PassKit
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-//            let json = [
-//                "HED": header,
-//                "DAT": dat
-//            ]
-           // let jsonData = try! JSONSerialization.data(withJSONObject: json, options: [])
+            let json = [
+                json1
+            ]
+           let jsonData = try! JSONSerialization.data(withJSONObject: json, options: [])
 
             let task : URLSessionDataTask = session.uploadTask(with: request, from: jsonData) { data, response, error in
                 if error != nil {
