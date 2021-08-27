@@ -1,24 +1,16 @@
-var exec = require('cordova/exec');
-var PLUGIN_NAME = 'DFNAppleWallet';
+cordova.define("cordova-dfn-apple-wallet.DFNAppleWallet", function(require, exports, module) {
+    var exec = require('cordova/exec');
+    var PLUGIN_NAME = 'DFNAppleWallet';
 
-var executeCallback = function(callback, message) {
-    if (typeof callback === 'function') {
-        callback(message);
-    }
-};
+    var DFNAppleWallet = {
+        addPass: function(passEndpoint, jsonValue, successCallback, errorCallback) {
+            exec(successCallback, errorCallback, PLUGIN_NAME, 'addPass', [passEndpoint, jsonValue]);
+        },
 
-var DFNAppleWallet = {
-    addPass: function(passEndpoint, jsonValue, successCallback, errorCallback) {
-        return new Promise(function(resolve, reject) {
-            exec(function(message) {
-                executeCallback(successCallback, message);
-                resolve(message);
-            }, function(message) {
-                executeCallback(errorCallback, message);
-                reject(message);
-            }, PLUGIN_NAME, 'addPass', [passEndpoint, jsonValue]);
-        });
-    }
-};
+        contains: function(passEndpoint, jsonValue, successCallback, errorCallback) {
+            exec(successCallback, errorCallback, PLUGIN_NAME, 'contains', [passEndpoint, jsonValue]);
+        },
+    };
 
-module.exports = DFNAppleWallet;
+    module.exports = DFNAppleWallet;
+});
