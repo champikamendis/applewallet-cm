@@ -40,6 +40,7 @@ import PassKit
             } else {
                 guard let response = response as? HTTPURLResponse,
                       (200...299).contains(response.statusCode) else {
+                          print("ADD PASS SERVER RESPONSEEEEEEEEEEEEEEEEEEE: \(response)")
                           self.errorCallback(callbackId: command.callbackId, message: "PKPASS_SERVER_ERROR")
                           
                           return
@@ -93,6 +94,7 @@ import PassKit
             } else {
                 guard let response = response as? HTTPURLResponse,
                       (200...299).contains(response.statusCode) else {
+                          print("CONTAIN SERVER RESPONSEEEEEEEEEEEEEEEEEEE: \(response)")
                           self.errorCallback(callbackId: command.callbackId, message: "PKPASS_SERVER_ERROR")
                           
                           return
