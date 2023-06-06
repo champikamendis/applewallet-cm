@@ -48,6 +48,7 @@ import PassKit
                 
                 do {
                     let pass = try PKPass(data: data!, error: nil)
+                    print("PASSSSSSSSSSSS::::::::::: \(data.String())")
                     let passLibrary = try PKPassLibrary()
                     let contains = passLibrary.containsPass(pass)
                     
