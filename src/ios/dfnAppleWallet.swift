@@ -38,6 +38,7 @@ import PassKit
             if error != nil {
                 self.errorCallback(callbackId: command.callbackId, message: "PKPASS_NETWORK_ERROR")
             } else {
+                print("ADD PASSSSSSSS:::::RESPONSE:::::: \(response)")
                 guard let response = response as? HTTPURLResponse,
                       (200...299).contains(response.statusCode) else {
                           print("ADD PASS SERVER RESPONSEEEEEEEEEEEEEEEEEEE: \(response)")
@@ -47,8 +48,6 @@ import PassKit
                       }
                 
                 do {
-                    let text2 = try String(contentsOf: data, encoding: .utf8)
-                    print("PASSSSSSSSSSSS::::::::::: \(text2)")
                     let pass = try PKPass(data: data!, error: nil)
                     let passLibrary = try PKPassLibrary()
                     let contains = passLibrary.containsPass(pass)
@@ -94,6 +93,7 @@ import PassKit
             if error != nil {
                 self.errorCallback(callbackId: command.callbackId, message: "PKPASS_NETWORK_ERROR")
             } else {
+                print("CONTAINSSSSSSS:::::RESPONSE:::::: \(response)")
                 guard let response = response as? HTTPURLResponse,
                       (200...299).contains(response.statusCode) else {
                           print("CONTAIN SERVER RESPONSEEEEEEEEEEEEEEEEEEE: \(response)")
@@ -103,8 +103,6 @@ import PassKit
                       }
                 
                 do {
-                    let text2 = try String(contentsOf: data, encoding: .utf8)
-                    print("PASSSSSSSSSSSS::::::::::: \(text2)")
                     let pass = try PKPass(data: data!, error: nil)
                     let passLibrary = try PKPassLibrary()
                     
