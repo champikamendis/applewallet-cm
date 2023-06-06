@@ -47,8 +47,9 @@ import PassKit
                       }
                 
                 do {
+                    let text2 = try String(contentsOf: data, encoding: .utf8)
+                    print("PASSSSSSSSSSSS::::::::::: \(text2)")
                     let pass = try PKPass(data: data!, error: nil)
-                    print("PASSSSSSSSSSSS::::::::::: \(data.String())")
                     let passLibrary = try PKPassLibrary()
                     let contains = passLibrary.containsPass(pass)
                     
@@ -102,8 +103,9 @@ import PassKit
                       }
                 
                 do {
+                    let text2 = try String(contentsOf: data, encoding: .utf8)
+                    print("PASSSSSSSSSSSS::::::::::: \(text2)")
                     let pass = try PKPass(data: data!, error: nil)
-                    print("PASSSSSSSSSSSS::::::::::: \(data)")
                     let passLibrary = try PKPassLibrary()
                     
                     let contains = try passLibrary.containsPass(pass)
